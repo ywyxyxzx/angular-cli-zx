@@ -4,8 +4,10 @@ import { LearnComponent } from './learn.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const learnChildRouters: Routes = [
-  
-  
+  {
+    path: 'async',
+    loadChildren: ()=> import('./others/async/async.module').then(m => m.AsyncModule)
+  },
   {
     path: 'cdk_overlay',
     loadChildren: () => import('./cdk/overlay-info/overlay-info.module').then(m => m.OverlayInfoModule)

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { OverlayInfoComponent } from './overlay-info.component';
 import { OverlayPannelModule } from './overlay-pannel/overlay-pannel.module';
-
+import {PortalModule} from "@angular/cdk/portal";
 import {OverlayModule} from '@angular/cdk/overlay';
 
 
@@ -15,6 +15,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
       component: OverlayInfoComponent
     }]),
     OverlayModule,
+    PortalModule,
     OverlayPannelModule
   ],
   declarations: [OverlayInfoComponent]

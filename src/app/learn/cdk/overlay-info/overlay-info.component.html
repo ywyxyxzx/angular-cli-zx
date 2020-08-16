@@ -1,3 +1,32 @@
 <button (click)="showOverlayGlobalPanelCenter1()">页面中心显示</button>
 <hr>
 <button (click)="showOverlayGlobalPanelCenter2()">页面中心显示自己位置</button>
+<hr>
+<button style="margin-left: 10px" (mouseenter)="showOverlayPanelTemplate()"
+(mouseleave)="dismissOverlayPanelTemplate()">
+显示 ng-template 内容
+</button>
+<!-- ng-template overlay 将要显示的内容 -->
+<ng-template cdk-portal #overlayGlobalTemplate="cdkPortal">
+    <p class="template-overlay-panel"> ng-temtortelliniTemplateplate显示 </p>
+</ng-template>
+<hr>
+<button style="margin-left: 10px" #connectComponentOrigin
+(mouseenter)="showOverlayPanelConnectComponent()"
+(mouseleave)="dismissOverlayPanelConnectComponent()">
+overlay connect 组件显示
+</button>
+<hr>
+<button cdk-overlay-origin #trigger="cdkOverlayOrigin" (click)="isMenuOpen = !isMenuOpen">
+    指令实现
+</button>
+<ng-template cdk-connected-overlay
+             [cdkConnectedOverlayOrigin]="trigger"
+             [cdkConnectedOverlayWidth]="500"
+             cdkConnectedOverlayHasBackdrop
+             [cdkConnectedOverlayOpen]="isMenuOpen"
+             (backdropClick)="isMenuOpen=false">
+    <div class="menu-wrap">
+        我是通过指令实现的Overlay
+    </div>
+</ng-template>
