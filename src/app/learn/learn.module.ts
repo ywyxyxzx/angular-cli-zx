@@ -5,6 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const learnChildRouters: Routes = [
   {
+    path: 'angular-base',
+    loadChildren: ()=> import('./angular-base/angular-base.module').then(m => m.AngularBaseModule)
+  },
+  {
     path: 'async',
     loadChildren: ()=> import('./others/async/async.module').then(m => m.AsyncModule)
   },
