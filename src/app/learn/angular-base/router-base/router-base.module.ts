@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
+import {  FormsModule} from '@angular/forms';
 import { RouterBaseComponent } from './router-base.component'
 import { RouterModule, Routes } from '@angular/router';
 import { CrisisListComponent }   from './crisis-list/crisis-list.component';
-import { HeroListComponent }     from './hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
-
+import { HeroesRoutingModule } from './heroes-routing.module';
+import { MessageService}  from './message.service';
+import {HeroService} from './hero.service';
+import { HeroListComponent }    from './hero-list/hero-list.component';
+import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    HeroesRoutingModule,
     RouterModule.forChild([
       {
         path: '',
@@ -17,7 +23,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         children: [
 
           { path: 'crisis-center', component: CrisisListComponent },
-          { path: 'heroes', component: HeroListComponent },
           { path: '**', component: PageNotFoundComponent }  
         ]
       }
@@ -25,7 +30,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
   ],
   declarations: [
-    RouterBaseComponent
+    RouterBaseComponent,
+    HeroListComponent,
+    HeroDetailComponent
+  ],
+  providers:[
+    MessageService,
+    HeroService
   ]
 })
 export class RouterBaseModule { }
