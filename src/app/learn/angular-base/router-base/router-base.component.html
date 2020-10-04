@@ -4,4 +4,6 @@
   <a routerLink="./heroes" routerLinkActive="active">Heroes</a>
   <button routerLink=". /sidekicks">Go to sidekicks</button>
 </nav>
-<router-outlet></router-outlet>
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>

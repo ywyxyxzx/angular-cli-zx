@@ -1,20 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../hero';
+import { Crisis } from '../crisis';
+import { CrisisService } from '../crisis.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { HeroService } from '../hero.service';
 import { switchMap } from 'rxjs/operators';
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.scss']
+  selector: 'app-crisis-detail',
+  templateUrl: './crisis-detail.component.html',
+  styleUrls: ['./crisis-detail.component.scss']
 })
-export class HeroDetailComponent implements OnInit {
+export class CrisisDetailComponent implements OnInit {
   hero$;
-  @Input() hero: Hero;
-
   constructor( private route: ActivatedRoute,
     private router: Router,
-    private service: HeroService) { }
+    private service: CrisisService ) { }
 
   ngOnInit() {
     this.hero$ = this.route.paramMap.pipe(
@@ -29,6 +27,6 @@ export class HeroDetailComponent implements OnInit {
     // so that the HeroList component can select that hero.
     // Include a junk 'foo' property for fun.
     //this.router.navigate(['/learn/angular-base/router/heroes', { id: heroId, foo: 'foo' }]);
-    this.router.navigateByUrl('/learn/angular-base/router/heroes')
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 }
