@@ -7,6 +7,14 @@ const baseRoutes : Routes = [
   {
     path: 'router',
     loadChildren: ()=> import('./router-base/router-base.module').then(m =>m.RouterBaseModule)
+  },{
+    path: 'form',
+    loadChildren: ()=> import('./form-base/form-base.module').then(m =>m.FormBaseModule)
+  },
+  {
+    path: '',
+    pathMatch:'full',
+    redirectTo: 'router'
   }
 ]
 
