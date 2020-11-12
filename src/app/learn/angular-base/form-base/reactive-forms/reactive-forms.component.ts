@@ -1,29 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+export type EditorType = 'name' | 'profile' | 'profile2';
 @Component({
   selector: 'app-reactive-forms',
   templateUrl: './reactive-forms.component.html',
   styleUrls: ['./reactive-forms.component.scss']
 })
 export class ReactiveFormsComponent implements OnInit {
-  //name = new FormControl('');
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-  });
-  constructor() { }
 
-  ngOnInit() {
+
+  editor: EditorType = 'name';
+  constructor(){}
+
+  get showNameEditor() {
+    return this.editor === 'name';
+  }
+
+  get showProfileEditor() {
+    return this.editor === 'profile';
+  }
+
+  get showProfileEditor2() {
+    return this.editor === 'profile2';
+  }
+  ngOnInit(){
     
   }
 
-  // updateName() {
-  //   this.name.setValue('Nancy');
-  // }
 
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+
+  toggleEditor(type: EditorType) {
+    this.editor = type;
   }
 
 }

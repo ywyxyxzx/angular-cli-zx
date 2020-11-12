@@ -1,23 +1,13 @@
-<!-- <label>
-  Name:
-  <input type="text" [formControl]="name">
-</label>
-<p>
-  Value: {{ name.value }}
-</p>
-<p>
-  <button (click)="updateName()">Update Name</button>
-</p> -->
-<form [formGroup]="profileForm"(ngSubmit)="onSubmit()">
-  
-  <label>
-    First Name:
-    <input type="text" formControlName="firstName">
-  </label>
+<h1>Reactive Forms</h1>
 
-  <label>
-    Last Name:
-    <input type="text" formControlName="lastName">
-  </label>
-  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
-</form>
+<nav>
+  <a (click)="toggleEditor('name')">Name Editor</a>
+  <a (click)="toggleEditor('profile')">Profile Editor</a>
+  <a (click)="toggleEditor('profile2')">Profile Editor2</a>
+</nav>
+
+<app-name-editor *ngIf="showNameEditor"></app-name-editor>
+
+<app-plrofie-editor *ngIf="showProfileEditor"></app-plrofie-editor>
+
+<app-profile-editer2 *ngIf="showProfileEditor2"></app-profile-editer2>
