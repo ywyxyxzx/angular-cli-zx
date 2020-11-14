@@ -16,6 +16,10 @@ const childRouters: Routes = [
       {
         path: 'reactive-forms',
         loadChildren: () => import('./reactive-forms/reactive-forms.module').then(m => m.ReactiveFormsBaseModule)
+      },
+      {
+        path: 'form-validation',
+        loadChildren: ()=> import('./form-validation/form-validation.module').then(m => m.FormValidationModule)
       }
     
     ]
