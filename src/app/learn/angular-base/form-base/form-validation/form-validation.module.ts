@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FormValidationComponent } from './form-validation.component';
 import {  HeroFormTemplateComponent  } from './hero-form-template/hero-form-template.component';
-import { ForbiddenNameDirective } from './forbidden-name.directive';
+import { ForbiddenValidatorDirective } from './forbidden-name.directive';
 
 
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule, 
+    ReactiveFormsModule,
     RouterModule.forChild([
       {
         path: '',
@@ -22,7 +23,7 @@ import { ForbiddenNameDirective } from './forbidden-name.directive';
   declarations: [	
     FormValidationComponent,
     HeroFormTemplateComponent,
-    ForbiddenNameDirective,
+    ForbiddenValidatorDirective,
   ]
 })
 export class FormValidationModule { }
