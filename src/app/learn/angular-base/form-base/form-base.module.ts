@@ -20,6 +20,10 @@ const childRouters: Routes = [
       {
         path: 'form-validation',
         loadChildren: ()=> import('./form-validation/form-validation.module').then(m => m.FormValidationModule)
+      },
+      {
+        path: 'dynamic-form',
+        loadChildren: ()=> import('./dynamic-form-base/dynamic-form-base.module').then(m => m.DynamicFormBaseModule)
       }
     
     ]
