@@ -14,7 +14,10 @@ const baseRoutes : Routes = [
   {
     path: 'others',
     loadChildren: ()=> import('./other-base/other-base.module').then(m => m.OtherBaseModule)
-    
+  },
+  {
+    path: 'http',
+    loadChildren: ()=> import('./http-base/http-base.module').then(m => m.HttpBaseModule)
   },
   {
     path: '',
