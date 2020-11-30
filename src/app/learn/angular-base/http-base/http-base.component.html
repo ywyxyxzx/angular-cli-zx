@@ -1,3 +1,19 @@
-<p>
-  http-base works!
-</p>
+<h1>HTTP Sample</h1>
+<div>
+  <input type="checkbox" id="heroes" [checked]="showHeroes" (click)="toggleHeroes()">
+  <label for="heroes">Heroes</label>
+
+  <input type="checkbox" id="config" [checked]="showConfig" (click)="toggleConfig()">
+  <label for="config">Config</label>
+
+  <input type="checkbox" id="downloader" [checked]="showDownloader" (click)="toggleDownloader()">
+  <label for="downloader">Downloader</label>
+
+  <input type="checkbox" id="uploader" [checked]="showUploader" (click)="toggleUploader()">
+  <label for="uploader">Uploader</label>
+
+  <input type="checkbox" id="search" [checked]="showSearch" (click)="toggleSearch()">
+  <label for="search">Search</label>
+</div>
+<hr>
+<app-config *ngIf="showConfig"></app-config>
