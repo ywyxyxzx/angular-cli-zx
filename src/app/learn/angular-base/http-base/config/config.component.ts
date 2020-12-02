@@ -28,7 +28,7 @@ export class ConfigComponent implements OnInit {
     this.configService.getConfigResponse()
       // resp is of type `HttpResponse<Config>`
       .subscribe(resp => {
-        console.log(resp,'response')
+        console.log(resp,'response',resp.body)
         // display its headers
         const keys = resp.headers.keys();
         this.headers = keys.map(key =>

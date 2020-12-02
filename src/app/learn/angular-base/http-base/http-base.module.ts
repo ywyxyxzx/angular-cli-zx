@@ -5,6 +5,10 @@ import { RouterModule } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigService } from './config/config.service';
 import { ConfigComponent } from './config/config.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import {MessageService} from "./message.service";
+import { HttpErrorHandler} from './http-error-handler.service';
+
 
 @NgModule({
   imports: [
@@ -20,10 +24,13 @@ import { ConfigComponent } from './config/config.component';
   ],
   declarations: [
     HttpBaseComponent,
-    ConfigComponent
+    ConfigComponent,
+    HeroesComponent,
   ],
   providers: [
-    ConfigService
+    ConfigService,
+    MessageService,
+    HttpErrorHandler
   ]
 })
 export class HttpBaseModule { }

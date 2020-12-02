@@ -8,6 +8,14 @@ export interface Config {
   textfile: string;
 }
 
+// options: {
+//   headers?: HttpHeaders | {[header: string]: string | string[]},
+//   observe?: 'body' | 'events' | 'response',
+//   params?: HttpParams|{[param: string]: string | string[]},
+//   reportProgress?: boolean,
+//   responseType?: 'arraybuffer'|'blob'|'json'|'text',
+//   withCredentials?: boolean,
+// }
 
 @Injectable()
 export class ConfigService {
