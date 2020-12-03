@@ -13,12 +13,12 @@ const learnChildRouters: Routes = [
     loadChildren: ()=> import('./others/async/async.module').then(m => m.AsyncModule)
   },
   {
-    path: 'cdk_overlay',
-    loadChildren: () => import('./cdk/overlay-info/overlay-info.module').then(m => m.OverlayInfoModule)
-  },
-  {
     path: 'introduce',
     loadChildren: () => import('./introduce/introduce.module').then(m => m.IntroduceModule)
+  },
+  {
+    path: 'cdk',
+    loadChildren: () => import('./cdk/cdk-base.module').then(m => m.CdkBaseModule)
   },
   {
     path: '',
