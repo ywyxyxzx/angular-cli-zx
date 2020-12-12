@@ -10,7 +10,7 @@ import {
   ViewContainerRef,
   Inject
 } from '@angular/core';
-import {DomPortalOutlet, TemplatePortal,ComponentPortal} from "@angular/cdk/portal";
+import {DomPortalOutlet, TemplatePortal, ComponentPortal} from "@angular/cdk/portal";
 import { DOCUMENT } from '@angular/common';
 
 @Component({
