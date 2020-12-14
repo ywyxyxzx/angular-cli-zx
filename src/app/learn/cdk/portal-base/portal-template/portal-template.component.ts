@@ -8,7 +8,8 @@ import {
   TemplateRef,
   ViewChild,
   ViewContainerRef,
-  Inject
+  Inject,
+  InjectionToken
 } from '@angular/core';
 import {DomPortalOutlet, TemplatePortal, ComponentPortal} from "@angular/cdk/portal";
 import { DOCUMENT } from '@angular/common';

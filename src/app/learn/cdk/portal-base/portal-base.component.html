@@ -1,4 +1,19 @@
-<p>
-  portal-base works!
-</p>
-<app-portal-template></app-portal-template>
+
+<div>
+  <input type="checkbox" id="inner" [checked]="showInner" (click)="showInner=!showInner;">
+  <label for="inner">内部添加</label>
+
+  <input type="checkbox" id="outer" [checked]="showOuter" (click)="showOuter=!showOuter;">
+  <label for="outer">外部添加</label>
+
+  <input type="checkbox" id="outer" [checked]="showOuterShare" (click)="showOuterShare=!showOuterShare;">
+  <label for="outer">外部共享模板</label>
+
+  <input type="checkbox" id="outerCom" [checked]="showOuterShareC" (click)="showOuterShareC=!showOuterShareC;">
+  <label for="outerCom">外部Component</label>
+</div>
+<hr>
+<app-portal-template *ngIf="showInner"></app-portal-template>
+<outlet-element *ngIf="showOuter"></outlet-element>
+<app-outer-share *ngIf="showOuterShare"></app-outer-share>
+<app-out-share-componet *ngIf="showOuterShareC"></app-out-share-componet>
