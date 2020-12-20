@@ -11,6 +11,7 @@ export class AdService {
       new AdItem(HeroProfileComponent, {name: 'Bombasto', bio: 'Brave as they come'}),
 
       new AdItem(HeroProfileComponent, {name: 'Dr IQ', bio: 'Smart as they come'}),
+      new AdItem(HeroProfileComponent, {name: 'Dr IQ2', bio: 'Smart as they come2'}),
 
       new AdItem(HeroJobAdComponent,   {headline: 'Hiring for several positions',
                                         body: 'Submit your resume today!'}),
