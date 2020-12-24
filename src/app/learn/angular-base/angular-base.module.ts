@@ -24,6 +24,10 @@ const baseRoutes : Routes = [
     loadChildren: ()=> import('./dynamic-view/dynamic-view.module').then(m => m.DynamicViewModule)
   },
   {
+    path: 'elements',
+    loadChildren: ()=> import('./elements/elements.module').then(m => m.ElementsModule)
+  },
+  {
     path: '',
     pathMatch:'full',
     redirectTo: 'router'
