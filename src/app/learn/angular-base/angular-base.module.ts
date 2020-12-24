@@ -28,6 +28,10 @@ const baseRoutes : Routes = [
     loadChildren: ()=> import('./elements/elements.module').then(m => m.ElementsModule)
   },
   {
+    path: 'pipes',
+    loadChildren: ()=> import('./pipe-base/pipe-base.module').then(m => m.PipeBaseModule)
+  },
+  {
     path: '',
     pathMatch:'full',
     redirectTo: 'router'
