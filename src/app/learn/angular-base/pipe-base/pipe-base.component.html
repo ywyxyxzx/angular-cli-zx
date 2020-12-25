@@ -1,4 +1,33 @@
 <p>The hero's birthday is {{ birthday | date }}</p>
-<p>The hero's birthday is {{ birthday | date:"MM/dd/yy" }} </p>
-<p>The hero's birthday is {{ birthday | date | uppercase}} </p>
-<p>Super power boost: {{2 | exponentialStrength: 2}}</p>
+<p>The hero's birthday is {{ birthday | date:"MM/dd/yy" }} 格式</p>
+<p>The hero's birthday is {{ birthday | date: "shortDate"}} 短</p>
+<p>The hero's birthday is {{ birthday | date: "fullDate" }} 长</p>
+<p>The hero's birthday is {{ birthday | date | uppercase}} 链式管道</p>
+<p>Super power boost: {{2 | exponentialStrength: 2}} 自定义管道</p>
+<hr>
+<input type="text" #box
+          (keyup.enter)="addHero(box.value); box.value=''"
+          placeholder="hero name">
+  <input id="can-fly" type="checkbox" [(ngModel)]="canFly"> can fly
+<hr>纯管道
+<div *ngFor="let hero of (heroes | flyingHeroes)">
+  {{hero.name}}
+</div>
+<hr>非纯管道
+<div *ngFor="let hero of (heroes | flyingHeroesImpure)">
+  {{hero.name}}
+</div>
+<hr>
+<h2>异步</h2>
+<p>Message: {{ message$ | async }}</p>
+<button (click)="resend()">Resend</button>
+<hr>
+<h2>Heroes from JSON File</h2>
+
+<div *ngFor="let hero of ('assets/heroes.json' | fetch) ">
+  {{hero.name}}
+</div>
+
+<p>Heroes as JSON:
+  {{'assets/heroes.json' | fetch | json}}
+</p>`
