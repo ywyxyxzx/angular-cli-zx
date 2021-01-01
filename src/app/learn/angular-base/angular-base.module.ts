@@ -32,6 +32,10 @@ const baseRoutes : Routes = [
     loadChildren: ()=> import('./pipe-base/pipe-base.module').then(m => m.PipeBaseModule)
   },
   {
+    path: 'structual-directive',
+    loadChildren: ()=> import('./structural-directives/structural-directives.module').then(m => m.StructuralDirectivesModule)
+  },
+  {
     path: '',
     pathMatch:'full',
     redirectTo: 'router'
