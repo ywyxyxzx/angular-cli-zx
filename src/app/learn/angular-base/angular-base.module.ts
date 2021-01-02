@@ -36,6 +36,10 @@ const baseRoutes : Routes = [
     loadChildren: ()=> import('./structural-directives/structural-directives.module').then(m => m.StructuralDirectivesModule)
   },
   {
+    path: 'dependency-injection',
+    loadChildren: ()=> import('./dependency-injection/dependency-injection.module').then(m => m.DependencyInjectionModule)
+  },
+  {
     path: '',
     pathMatch:'full',
     redirectTo: 'router'
