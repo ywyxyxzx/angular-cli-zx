@@ -22,7 +22,7 @@ import { VALUE_SERVICE } from '../bc.component';
 export class Bc2Component implements OnInit {
   content = 'undefined';
   constructor(@Inject(VALUE_SERVICE) @Host() @Optional() public cos: string) { 
-    this.content = cos;
+    this.content = cos || 'undefined';
   }
 
   ngOnInit() {
