@@ -1,7 +1,11 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DependencyInjectionComponent } from './dependency-injection.component';
+import { BcComponent } from './bc/bc.component';
+import { Bc2Component } from './bc/bc2/bc2.component';
+
+export const VALUE_SERVICE = new InjectionToken<string>('value_service');
 
 @NgModule({
   imports: [
@@ -13,6 +17,7 @@ import { DependencyInjectionComponent } from './dependency-injection.component';
       }
     ])
   ],
-  declarations: [DependencyInjectionComponent]
+  declarations: [DependencyInjectionComponent,BcComponent, Bc2Component ],
+  providers: [{ provide: VALUE_SERVICE, useValue: "Apples" }]
 })
 export class DependencyInjectionModule { }
