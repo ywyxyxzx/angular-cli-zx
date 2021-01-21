@@ -5,6 +5,8 @@ import { DependencyInjectionComponent } from './dependency-injection.component';
 import { BcComponent } from './bc/bc.component';
 import { Bc2Component } from './bc/bc2/bc2.component';
 import { InjectorTypeModule } from './injectorType/injectorType.module';
+import { InjectorComponent } from './injector.component';
+
 
 export const VALUE_SERVICE = new InjectionToken<string>('value_service');
 
@@ -19,7 +21,7 @@ export const VALUE_SERVICE = new InjectionToken<string>('value_service');
     ]),
     InjectorTypeModule
   ],
-  declarations: [DependencyInjectionComponent,BcComponent, Bc2Component, ],
+  declarations: [DependencyInjectionComponent,BcComponent, Bc2Component, InjectorComponent],
   providers: [
     { provide: VALUE_SERVICE, useValue: "Apples" }
   ]
