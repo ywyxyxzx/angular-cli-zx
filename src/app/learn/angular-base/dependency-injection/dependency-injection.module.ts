@@ -7,6 +7,9 @@ import { Bc2Component } from './bc/bc2/bc2.component';
 import { InjectorTypeModule } from './injectorType/injectorType.module';
 import { InjectorComponent } from './injector.component';
 import { APP_CONFIG, HERO_DI_CONFIG } from './app.config';
+import { HerosComponent } from './heros/heros.component';
+import { HeroListComponent  } from './heros/hero-list.component';
+
 
 export const VALUE_SERVICE = new InjectionToken<string>('value_service');
 
@@ -21,7 +24,8 @@ export const VALUE_SERVICE = new InjectionToken<string>('value_service');
     ]),
     InjectorTypeModule
   ],
-  declarations: [DependencyInjectionComponent,BcComponent, Bc2Component, InjectorComponent],
+  declarations: [DependencyInjectionComponent,BcComponent, Bc2Component, InjectorComponent,
+    HerosComponent,HeroListComponent],
   providers: [
     { provide: VALUE_SERVICE, useValue: "Apples" },
     { provide: APP_CONFIG, useValue: HERO_DI_CONFIG}

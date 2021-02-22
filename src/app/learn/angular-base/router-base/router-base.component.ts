@@ -14,7 +14,7 @@ export class RouterBaseComponent implements OnInit {
   ngOnInit() {
   }
   getAnimationData(outlet: RouterOutlet) {
-    // debugger
+    // 
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 

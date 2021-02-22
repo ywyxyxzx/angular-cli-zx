@@ -16,4 +16,7 @@
   {{userInfo}}
   <button (click)="nextUser()">Next User</button>
 <p>
+<br>
+<app-heros id="authorized" *ngIf="isAuthorized"></app-heros>
+<app-heros id="unauthorized" *ngIf="!isAuthorized"></app-heros>
 <hr>

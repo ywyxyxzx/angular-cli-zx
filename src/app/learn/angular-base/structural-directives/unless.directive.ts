@@ -12,12 +12,12 @@ export class UnlessDirective {
   }
   @Input() set appUnless(condition: boolean) {
     if(!condition && ! this.hasView ) {
-      debugger
+      
       this.viewContainerRef.createEmbeddedView(this.templateUrl);
       this.hasView = true;
     }
     if(condition && this.hasView) {
-      debugger
+      
       this.viewContainerRef.clear();
       this.hasView = false;
     }

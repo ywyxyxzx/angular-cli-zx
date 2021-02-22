@@ -23,11 +23,15 @@ export class DependencyInjectionComponent implements OnInit {
   nextUser() {
     this.userService.getNewUser(); 
   }
-  get user()         { return this.userService.user; }
-  get isAuthorized() { return this.user.isAuthorized; }
+  get user()         { 
+    return this.userService.user;
+  }
+  get isAuthorized() { 
+    return this.user.isAuthorized; 
+  }
   get userInfo() {
     return `Current user, ${this.user.name}, is ` +
     `${this.isAuthorized ? '' : 'not'} authorized. `;
-}
+  }
 
 }

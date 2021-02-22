@@ -20,7 +20,7 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     this.heroesService.getHeroes()
       .subscribe(heroes => {
-        debugger
+        
         this.heroes = heroes
       });
   }
