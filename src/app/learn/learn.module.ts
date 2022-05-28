@@ -13,6 +13,10 @@ const learnChildRouters: Routes = [
     loadChildren: ()=> import('./others/async/async.module').then(m => m.AsyncModule)
   },
   {
+    path: 'monaco-editor',
+    loadChildren: ()=> import('./others/monaco-editor/monaco-editor.module').then(m => m.MonacoEditorModule)
+  },
+  {
     path: 'introduce',
     loadChildren: () => import('./introduce/introduce.module').then(m => m.IntroduceModule)
   },
