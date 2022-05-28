@@ -5,6 +5,10 @@ import { RouterModule,Routes} from '@angular/router'
 
 const baseRoutes : Routes = [
   {
+    path: 'lifecycle-hooks',
+    loadChildren: ()=> import('./lifecycle/lifecycle.module').then(m =>m.LifecycleModule)
+  },
+  {
     path: 'router',
     loadChildren: ()=> import('./router-base/router-base.module').then(m =>m.RouterBaseModule)
   },{
