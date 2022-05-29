@@ -9,6 +9,10 @@ const baseRoutes : Routes = [
     loadChildren: ()=> import('./lifecycle/lifecycle.module').then(m =>m.LifecycleModule)
   },
   {
+    path: 'changeDetection',
+    loadChildren: ()=> import('./changeDetection/changeDetection.module').then(m =>m.ChangeDetectionModule)
+  },
+  {
     path: 'router',
     loadChildren: ()=> import('./router-base/router-base.module').then(m =>m.RouterBaseModule)
   },{
